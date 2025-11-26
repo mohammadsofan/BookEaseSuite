@@ -8,8 +8,6 @@ namespace BookEaseSuite.Domain.Entities
         public string LastName { get; set; } = string.Empty;
         public string UserName { get; set; } = string.Empty;
         public string Email { get; set; } = string.Empty;
-        public string Country { get; set; } = string.Empty;
-        public string City { get; set; } = string.Empty;
         public string PhoneNumber { get; set; } = string.Empty;
         public DateTime BirthDate { get; set; }
         public string PasswordHash { get; set; } = string.Empty;
@@ -26,6 +24,9 @@ namespace BookEaseSuite.Domain.Entities
         public DateTime? EmailVerificationTokenExpires { get; set; }
         public string? PasswordResetCode { get; set; }
         public DateTime? PasswordResetCodeExpires { get; set; }
-
+        public long CountryId { get; set; }
+        public Country? Country { get; set; }
+        public long CityId { get; set; }
+        public City? City { get; set; }
     }
 }
