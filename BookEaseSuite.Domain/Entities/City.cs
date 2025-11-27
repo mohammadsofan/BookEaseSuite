@@ -5,5 +5,6 @@
         public string? Name { get; set; }
         public long CountryId { get; set; }
         public Country? Country { get; set; }
+        public ICollection<User> Users { get; set; } = new List<User>();
     }
 }
