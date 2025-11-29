@@ -1,4 +1,7 @@
-﻿using BookEaseSuite.Infrastructrue.Data;
+﻿using Bidaya.Infrastructure.Repositories;
+using BookEaseSuite.Application.Interfaces;
+using BookEaseSuite.Infrastructrue.Data;
+using BookEaseSuite.Infrastructrue.Repositories;
 using BookEaseSuite.Infrastructrue.Settings;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -15,6 +18,10 @@ namespace BookEaseSuite.Infrastructrue.Extensions
             {
                 options.UseSqlServer(configuration.GetConnectionString("DefaultConnection"));
             });
+            services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+            services.AddScoped<ICityRepository, CityRepository>();
+            services.AddScoped<ICountryRepository, CountryRepository>();
+            services.AddScoped<IUserRepository, UserRepository>();
         }
     }
 }
