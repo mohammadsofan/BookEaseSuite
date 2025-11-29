@@ -8,7 +8,7 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 
-namespace BookEaseSuite.Infrastructrue.Services
+namespace BookEaseSuite.Infrastructrue.Utils
 {
     public class TokenService : ITokenService
     {

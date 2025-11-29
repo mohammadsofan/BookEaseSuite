@@ -3,6 +3,8 @@ using BookEaseSuite.Application.Interfaces;
 using BookEaseSuite.Infrastructrue.Data;
 using BookEaseSuite.Infrastructrue.Repositories;
 using BookEaseSuite.Infrastructrue.Settings;
+using BookEaseSuite.Infrastructrue.Utils;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -22,6 +24,9 @@ namespace BookEaseSuite.Infrastructrue.Extensions
             services.AddScoped<ICityRepository, CityRepository>();
             services.AddScoped<ICountryRepository, CountryRepository>();
             services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<ITokenService, TokenService>();
+            services.AddScoped(typeof(IPasswordHasher<>), typeof(PasswordHasher<>));
+            services.AddScoped<IPasswordHasher, PasswordHasher>();
         }
     }
 }
