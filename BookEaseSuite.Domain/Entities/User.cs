@@ -9,6 +9,7 @@ namespace BookEaseSuite.Domain.Entities
         public string UserName { get; set; } = string.Empty;
         public string Email { get; set; } = string.Empty;
         public string PhoneNumber { get; set; } = string.Empty;
+        public Gender Gender { get; set; }
         public DateTime BirthDate { get; set; }
         public string PasswordHash { get; set; } = string.Empty;
         public string PasswordSalt { get; set; } = string.Empty;
