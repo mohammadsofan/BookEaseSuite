@@ -2,5 +2,7 @@
 {
     public class CreateCityRequestDto
     {
+        public string Name { get; set; } = string.Empty;
+        public long CountryId { get; set; }
     }
 }

@@ -3,6 +3,5 @@
     public class CreateCountryRequestDto
     {
         public string Name { get; set; } = string.Empty;
-
     }
 }
