@@ -7,11 +7,11 @@ namespace BookEaseSuite.Application.Commands.Auth
 {
     public class CreateUserCommand : IRequest<ApplicationResult<RegisterResponseDto>>
     {
-        public RegisterRequestDto RequestDto { get; set; } = new RegisterRequestDto();
+        public RegisterRequestDto RegisterRequestDto { get; set; } = new RegisterRequestDto();
 
-        public CreateUserCommand(RegisterRequestDto requestDto)
+        public CreateUserCommand(RegisterRequestDto registerRequestDto)
         {
-            RequestDto = requestDto;
+            RegisterRequestDto = registerRequestDto;
         }
     }
 }

@@ -46,6 +46,7 @@ namespace BookEaseSuite.Infrastructrue.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Name")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -124,6 +125,9 @@ namespace BookEaseSuite.Infrastructrue.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("Gender")
+                        .HasColumnType("int");
+
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 
@@ -152,10 +156,6 @@ namespace BookEaseSuite.Infrastructrue.Migrations
 
                     b.Property<DateTime?>("PasswordResetCodeExpires")
                         .HasColumnType("datetime2");
-
-                    b.Property<string>("PasswordSalt")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PhoneNumber")
                         .IsRequired()

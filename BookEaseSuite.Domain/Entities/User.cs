@@ -12,7 +12,6 @@ namespace BookEaseSuite.Domain.Entities
         public Gender Gender { get; set; }
         public DateTime BirthDate { get; set; }
         public string PasswordHash { get; set; } = string.Empty;
-        public string PasswordSalt { get; set; } = string.Empty;
         public DateTime? LastLoginUtc { get; set; }
         public UserRole UserRole { get; set; }
         public bool IsLocked { get; set; } = false;
