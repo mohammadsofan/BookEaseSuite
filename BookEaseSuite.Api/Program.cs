@@ -1,6 +1,6 @@
+using BookEaseSuite.Application.Extensions;
 using BookEaseSuite.Infrastructrue.Data.DBInitializer;
 using BookEaseSuite.Infrastructrue.Extensions;
-using System.Threading.Tasks;
 namespace BookEaseSuite.Api
 {
     public class Program
@@ -15,8 +15,9 @@ namespace BookEaseSuite.Api
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+            builder.Services.AddApplication();
             builder.Services.AddInfrastructure(builder.Configuration);
-            
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -29,14 +30,15 @@ namespace BookEaseSuite.Api
             app.UseHttpsRedirection();
 
             app.UseAuthorization();
-            
+
 
             app.MapControllers();
             using (var scope = app.Services.CreateScope())
             {
                 var dbInitializer = scope.ServiceProvider.GetRequiredService<DBInitializer>();
                 await dbInitializer.Initialize();
-            };
+            }
+            ;
             app.Run();
         }
     }
